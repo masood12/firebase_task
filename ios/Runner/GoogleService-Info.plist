@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>504280903676-dvgs1qm4hakn17e7cmv0ahh5n63k58uc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.504280903676-dvgs1qm4hakn17e7cmv0ahh5n63k58uc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDMMPJ6d4zT7sfS6E-dTnJTuSzWGWb0dlA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>504280903676</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.masood.firebasetask</string>
+	<key>PROJECT_ID</key>
+	<string>bikeshopsample-6573a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bikeshopsample-6573a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:504280903676:ios:fcd8fc054192356fd30c79</string>
+	<key>DATABASE_URL</key>
+	<string>https://bikeshopsample-6573a.firebaseio.com</string>
+</dict>
+</plist>

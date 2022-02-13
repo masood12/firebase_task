@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "504280903676",
+    "firebase_url": "https://bikeshopsample-6573a.firebaseio.com",
+    "project_id": "bikeshopsample-6573a",
+    "storage_bucket": "bikeshopsample-6573a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504280903676:android:cfc98d23bd2d223cd30c79",
+        "android_client_info": {
+          "package_name": "com.masood.firebasetask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504280903676-fgdmq33kubu94elejshj1rrgv519lbrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGBrpnFSc4C7x-TvgdzYsc2wRZWff2CJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504280903676-fgdmq33kubu94elejshj1rrgv519lbrv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "504280903676-dvgs1qm4hakn17e7cmv0ahh5n63k58uc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.masood.firebasetask"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
