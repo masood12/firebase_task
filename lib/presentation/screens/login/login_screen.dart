@@ -29,6 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
   UserCubit cubit = sl();
 
   @override
+  void initState() {
+    super.initState();
+    emailController.text = "masood@gmail.com";
+    passwordController.text = "123456";
+  }
+  @override
   void dispose() {
     super.dispose();
     emailController.dispose();

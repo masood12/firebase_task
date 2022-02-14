@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebasetask/core/utils/app_text_styles.dart';
 import 'package:firebasetask/core/utils/sizes.dart';
+import 'package:firebasetask/domain/model/food_items_model.dart';
 import 'package:flutter/material.dart';
 
 class CusineWidget extends StatelessWidget {
-  const CusineWidget({Key? key}) : super(key: key);
+  FoodItemsModel data;
+   CusineWidget({Key? key,required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +24,12 @@ class CusineWidget extends StatelessWidget {
         ),
         5.verticalSpace,
         Text(
-          "Chicken Barayni",
+          "${data.name}",
           style: StyleText.mediumDarkGray15,
         ),
         5.verticalSpace,
         Text(
-          "Pakistani",
+          "${data.cusine}",
           style: StyleText.regularDarkGrey14,
         )
       ],

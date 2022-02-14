@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebasetask/presentation/cubit/auth/auth_cubit.dart';
+import 'package:firebasetask/presentation/cubit/home/home_cubit.dart';
 import 'package:firebasetask/presentation/cubit/user/user_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,6 +11,8 @@ import 'data/reposotories/firebase_repository_impl.dart';
 import 'domain/respositories/firebase_repository.dart';
 import 'domain/use_cases/get_create_current_user_usecase.dart';
 import 'domain/use_cases/get_current_uid_usecase.dart';
+import 'domain/use_cases/get_filtered_food_item_usecase.dart';
+import 'domain/use_cases/get_food_item_usecase.dart';
 import 'domain/use_cases/is_sign_in_usecase.dart';
 import 'domain/use_cases/sign_in_usecase.dart';
 import 'domain/use_cases/sign_out_usecase.dart';
@@ -56,6 +59,10 @@ void _cubits() {
         getCreateCurrentUserUseCase: sl.call(),
         signInUseCase: sl.call(),
       ));
+  sl.registerFactory<HomeCubit>(() => HomeCubit(
+      foodItemUseCase: sl.call(),
+      filteredFoodItemUseCase: sl.call()
+  ));
 }
 
 void _useCases() {
@@ -64,10 +71,17 @@ void _useCases() {
   sl.registerLazySingleton<GetCurrentUidUseCase>(
       () => GetCurrentUidUseCase(repository: sl.call()));
 
+
   sl.registerLazySingleton<IsSignInUseCase>(
       () => IsSignInUseCase(repository: sl.call()));
   sl.registerLazySingleton<SignInUseCase>(
       () => SignInUseCase(repository: sl.call()));
   sl.registerLazySingleton<SignOutUseCase>(
       () => SignOutUseCase(repository: sl.call()));
+
+  sl.registerLazySingleton<GetFoodItemUseCase>(
+          () => GetFoodItemUseCase(repository: sl.call()));
+
+  sl.registerLazySingleton<GetFilteredFoodItemUseCase>(
+          () => GetFilteredFoodItemUseCase(repository: sl.call()));
 }
