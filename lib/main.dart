@@ -12,7 +12,7 @@ import 'core/utils/pref_utils.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  bool isLogin = await PreferenceUtils.getBool("isLoggedId",defaultValue: false);
+  bool isLogin = await PreferenceUtils.getBool("isLoggedIn",defaultValue: false);
   await initDI();
   runApp(
     ScreenUtilInit(

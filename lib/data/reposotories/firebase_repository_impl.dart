@@ -10,15 +10,6 @@ class FirebaseRepositoryImpl extends FirebaseRepository {
 
   FirebaseRepositoryImpl({required this.remoteDataSource});
 
-  @override
-  Future<void> getCreateCurrentUser(UserEntity user) async =>
-      remoteDataSource.getCreateCurrentUser(user);
-
-  @override
-  Future<String> getCurrentUId() async => remoteDataSource.getCurrentUId();
-
-  @override
-  Future<bool> isSignIn() async => remoteDataSource.isSignIn();
 
   @override
   Future<UserCredential> signIn(UserEntity user) async =>
@@ -28,9 +19,9 @@ class FirebaseRepositoryImpl extends FirebaseRepository {
   Future<void> signOut() async => remoteDataSource.signOut();
 
   @override
-  Stream<List<FoodItemsModel>> getFoodItems(String filter) {
+  Stream<List<FoodItemsModel>> getFoodItems() {
 
-   return remoteDataSource.getFoodItems(filter);
+   return remoteDataSource.getFoodItems();
   }
 
   @override

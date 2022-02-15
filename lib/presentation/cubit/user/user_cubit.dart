@@ -4,18 +4,15 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebasetask/core/utils/pref_utils.dart';
-import 'package:firebasetask/core/utils/pref_utils.dart';
 import 'package:firebasetask/domain/entities/user_entity.dart';
-import 'package:firebasetask/domain/use_cases/get_create_current_user_usecase.dart';
 import 'package:firebasetask/domain/use_cases/sign_in_usecase.dart';
 
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
   final SignInUseCase signInUseCase;
-  final GetCreateCurrentUserUseCase getCreateCurrentUserUseCase;
   UserCubit(
-      {required this.signInUseCase, required this.getCreateCurrentUserUseCase})
+      {required this.signInUseCase})
       : super(UserInitial());
 
   String error = "";
@@ -23,7 +20,7 @@ class UserCubit extends Cubit<UserState> {
     emit(UserLoading());
     try {
       UserCredential userCredential = await signInUseCase.call(user);
-      PreferenceUtils.saveBool("isLoggedId",true);
+      PreferenceUtils.saveBool("isLoggedIn",true);
       emit(UserSuccess());
     } on FirebaseAuthException catch (e) {
       emit(UserFailure(error: e.message));

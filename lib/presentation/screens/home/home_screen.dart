@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    homeCubit.getData("");
+    homeCubit.getData();
   }
 
   @override
@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _buildBody(BuildContext context) {
     return  Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         _buildFilterWidget(),
         10.verticalSpace,
@@ -80,14 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   _buildFoodItemList(List<FoodItemsModel> list){
-    return GridView.builder(
-      padding: EdgeInsets.zero,
-      shrinkWrap: true,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2),
-      itemBuilder: (_, index) =>
-          CusineWidget(data: list[index]),
-      itemCount: list.length,
+    return list.isNotEmpty ? Expanded(
+      child: GridView.builder(
+        padding: EdgeInsets.zero,
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2),
+        itemBuilder: (_, index) =>
+            CusineWidget(data: list[index]),
+        itemCount: list.length,
+      ),
+    ) :  Center(
+      child: Text("NO DATA FOUND",style: StyleText.mediumDarkGray17,),
     );
   }
 
@@ -95,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocBuilder<HomeCubit, HomeState>(
       bloc: homeCubit,
       buildWhen: (current, newState) {
-        if (newState is LoadingState || newState is ErrorState || newState is FilterStateLoaded) {
+        if (newState is FiltersLoadingState || newState is ErrorState || newState is FilterStateLoaded) {
           return false;
         }
         return true;
@@ -105,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return state is LoadedState ? Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: SizedBox(
-            height: 50,
+            height: 45.flexibleHeight,
             child: ListView.builder(
                 itemCount: state.filterList!.length,
                 scrollDirection: Axis.horizontal,
@@ -115,7 +120,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: FilterWidget(
                       filterName: state.filterList![index],
                       onFilterPressed: () {
-                        homeCubit.getFilterData(state.filterList![index]);
+                        if(state.filterList![index].contains("All")){
+                         homeCubit.getData();
+                        }else{
+                          homeCubit.getFilterData(state.filterList![index]);
+                        }
+
                       },
                     ),
                   );

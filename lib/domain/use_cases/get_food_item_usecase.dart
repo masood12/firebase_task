@@ -1,4 +1,3 @@
-import 'package:firebasetask/domain/entities/food_item_entity.dart';
 import 'package:firebasetask/domain/model/food_items_model.dart';
 import 'package:firebasetask/domain/respositories/firebase_repository.dart';
 
@@ -8,7 +7,7 @@ class GetFoodItemUseCase {
 
   GetFoodItemUseCase({required this.repository});
 
-  Stream<List<FoodItemsModel>> call(String filter){
-    return repository.getFoodItems(filter);
+  Stream<List<FoodItemsModel>> call(){
+    return repository.getFoodItems();
   }
 }

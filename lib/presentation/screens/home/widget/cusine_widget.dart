@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebasetask/common/widgets/shimmer_effect.dart';
 import 'package:firebasetask/core/utils/app_text_styles.dart';
 import 'package:firebasetask/core/utils/sizes.dart';
 import 'package:firebasetask/domain/model/food_items_model.dart';
@@ -15,11 +16,13 @@ class CusineWidget extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: CachedNetworkImage(
-            imageUrl:
-                "https://migrationology.com/wp-content/uploads/2019/01/pakistani-food-guide.jpg",
+            imageUrl:"${data.img}",
             height: 100.flexibleHeight,
             width: 100.flexibleWidth,
             fit: BoxFit.cover,
+            placeholder: (context, url) => ShimmerEffect(width: 100.flexibleWidth,height: 100.flexibleHeight,isCircular: true,),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+
           ),
         ),
         5.verticalSpace,

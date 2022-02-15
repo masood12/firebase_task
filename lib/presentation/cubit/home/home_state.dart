@@ -14,11 +14,16 @@ class LoadingState extends HomeState {
   @override
   List<Object> get props => [];
 }
+class FiltersLoadingState extends HomeState {
+
+  @override
+  List<Object> get props => [];
+}
 
 class LoadedState extends HomeState {
   final List<FoodItemsModel>? foodList;
   final List<String>? filterList;
-   LoadedState({required this.foodList,required this.filterList});
+   const LoadedState({required this.foodList,required this.filterList});
   @override
   List<Object> get props => [foodList!,filterList!];
 }

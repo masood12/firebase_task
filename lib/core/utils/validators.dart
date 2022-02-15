@@ -4,8 +4,10 @@ class FormValidators {
   static FormValidators instance = FormValidators._();
 
   String? validatePassword(String? value) {
-    if (value!.isEmpty || value.length < 6) {
-      return 'Required or password validation *';
+    if (value!.isEmpty) {
+      return 'Password cant be empty';
+    }else if(value.length<6){
+      return "Password should not be less than 5 char";
     }
     return null;
   }
@@ -19,7 +21,7 @@ class FormValidators {
 
   String? validateEmail(String? value) {
     if (value!.isEmpty) {
-      return 'required *';
+      return 'Email cant be empty';
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(value)) {

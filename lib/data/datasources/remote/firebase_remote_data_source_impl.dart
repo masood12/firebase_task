@@ -12,17 +12,6 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
   final FirebaseFirestore fireStore;
   FirebaseRemoteDataSourceImpl({required this.auth, required this.fireStore});
 
-  @override
-  Future<void> getCreateCurrentUser(UserEntity user) {
-    // TODO: implement getCreateCurrentUser
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<String> getCurrentUId() async => auth.currentUser!.uid;
-
-  @override
-  Future<bool> isSignIn() async => auth.currentUser?.uid != null;
 
   @override
   Future<UserCredential> signIn(UserEntity user) async {
@@ -34,7 +23,7 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
   Future<void> signOut() async => auth.signOut();
 
   @override
-  Stream<List<FoodItemsModel>> getFoodItems(String filter) {
+  Stream<List<FoodItemsModel>> getFoodItems() {
     final noteCollectionRef=fireStore.collection("foodData").snapshots();
 
     return noteCollectionRef.map((querySnap) {

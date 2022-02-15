@@ -31,8 +31,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    emailController.text = "masood@gmail.com";
-    passwordController.text = "123456";
+    // emailController.text = "masood@gmail.com";
+    // passwordController.text = "123456";
   }
   @override
   void dispose() {
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Bobtail",
+                  "dsdsd",
                   style: StyleText.boldDarkGrey28,
                 ),
                 50.verticalSpace,
