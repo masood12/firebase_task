@@ -13,6 +13,7 @@ class FilterWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onFilterPressed,
       child: Container(
+
         height: 36.flexibleHeight,
         decoration: BoxDecoration(
             color: UIColors.darkGray, borderRadius: BorderRadius.circular(6)),

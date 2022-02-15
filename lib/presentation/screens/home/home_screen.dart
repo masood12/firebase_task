@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
 
         return state is LoadedState ? Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          padding:  EdgeInsets.only(left: 18.0.flexibleWidth,right:18.flexibleWidth,top:5.flexibleHeight),
           child: SizedBox(
             height: 45.flexibleHeight,
             child: ListView.builder(
