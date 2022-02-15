@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebasetask/presentation/cubit/home/home_cubit.dart';
-import 'package:firebasetask/presentation/cubit/user/user_cubit.dart';
+import 'package:firebasetask/presentation/cubit/login/login_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'data/datasources/remote/firebase_remote_data_source.dart';
 import 'data/datasources/remote/firebase_remote_data_source_impl.dart';
@@ -47,7 +47,7 @@ void _repoIntialization() {
 
 void _cubits() {
 
-  sl.registerFactory<UserCubit>(() => UserCubit(
+  sl.registerFactory<LoginCubit>(() => LoginCubit(
         signInUseCase: sl.call(),
       ));
   sl.registerFactory<HomeCubit>(() => HomeCubit(

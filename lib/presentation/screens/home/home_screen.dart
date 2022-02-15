@@ -1,6 +1,7 @@
 import 'package:firebasetask/common/widgets/app_drawer.dart';
 import 'package:firebasetask/core/utils/app_text_styles.dart';
 import 'package:firebasetask/core/utils/colors.dart';
+import 'package:firebasetask/core/utils/screen_loader.dart';
 import 'package:firebasetask/core/utils/sizes.dart';
 import 'package:firebasetask/di.dart';
 import 'package:firebasetask/domain/model/food_items_model.dart';
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(state.error!,style: StyleText.mediumDarkGray17,),
               );
             }
-            return loadingWidget();
+            return const AppCircularIndicator();
           },
         )
       ],
@@ -110,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return state is LoadedState ? Padding(
           padding:  EdgeInsets.only(left: 18.0.flexibleWidth,right:18.flexibleWidth,top:5.flexibleHeight),
           child: SizedBox(
-            height: 45.flexibleHeight,
+            height: 50.flexibleHeight,
             child: ListView.builder(
                 itemCount: state.filterList!.length,
                 scrollDirection: Axis.horizontal,
@@ -136,12 +137,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  loadingWidget() {
-    return const Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(UIColors.primaryColor),
-      ),
-    );
-  }
 
 }

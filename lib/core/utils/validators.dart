@@ -3,6 +3,7 @@ class FormValidators {
 
   static FormValidators instance = FormValidators._();
 
+  //Password validator function
   String? validatePassword(String? value) {
     if (value!.isEmpty) {
       return 'Password cant be empty';
@@ -12,13 +13,7 @@ class FormValidators {
     return null;
   }
 
-  String? emptyCheck(String? value) {
-    if (value!.isEmpty) {
-      return 'required *';
-    }
-    return null;
-  }
-
+//Email validator function
   String? validateEmail(String? value) {
     if (value!.isEmpty) {
       return 'Email cant be empty';

@@ -7,11 +7,11 @@ import 'package:firebasetask/core/utils/pref_utils.dart';
 import 'package:firebasetask/domain/entities/user_entity.dart';
 import 'package:firebasetask/domain/use_cases/sign_in_usecase.dart';
 
-part 'user_state.dart';
+part 'login_state.dart';
 
-class UserCubit extends Cubit<UserState> {
+class LoginCubit extends Cubit<LoginState> {
   final SignInUseCase signInUseCase;
-  UserCubit(
+  LoginCubit(
       {required this.signInUseCase})
       : super(UserInitial());
 

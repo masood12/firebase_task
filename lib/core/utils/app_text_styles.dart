@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class StyleText {
   const StyleText();
 
-  //text field color
+  //text field hint color
   static TextStyle hintStyle = TextStyle(
       fontSize: 13.fontSize,
       color: UIColors.textFieldHintColor,
@@ -16,7 +16,6 @@ class StyleText {
       fontWeight: FontWeight.w300);
 
   //light text dark
-
   static TextStyle lightDarkGray14 = TextStyle(
       fontSize: 14.fontSize,
       color: UIColors.darkGray,
@@ -96,40 +95,9 @@ class StyleText {
       fontSize: 15.fontSize,
       color: UIColors.white,
       fontWeight: FontWeight.w400);
-  static TextStyle regularWhite16 = TextStyle(
-      fontSize: 16.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
-  static TextStyle regularWhite17 = TextStyle(
-      fontSize: 17.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
-  static TextStyle regularWhite18 = TextStyle(
-      fontSize: 18.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
-  static TextStyle regularWhite20 = TextStyle(
-      fontSize: 20.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
-  static TextStyle regularWhite28 = TextStyle(
-      fontSize: 28.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
-  static TextStyle regularWhite30 = TextStyle(
-      fontSize: 30.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w400);
 
   // medium-text-black
-  static TextStyle mediumDarkGray10 = TextStyle(
-      fontSize: 10.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w500);
-  static TextStyle mediumDarkGray12 = TextStyle(
-      fontSize: 12.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w500);
+
   static TextStyle mediumDarkGray13 = TextStyle(
       fontSize: 13.fontSize,
       color: UIColors.darkGray,
@@ -158,23 +126,9 @@ class StyleText {
       fontSize: 20.fontSize,
       color: UIColors.darkGray,
       fontWeight: FontWeight.w500);
-  static TextStyle mediumDarkGray28 = TextStyle(
-      fontSize: 28.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w500);
-  static TextStyle mediumDarkGray30 = TextStyle(
-      fontSize: 30.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w500);
+
   // medium-text-white
-  static TextStyle mediumWhite10 = TextStyle(
-      fontSize: 10.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w500);
-  static TextStyle mediumWhite12 = TextStyle(
-      fontSize: 12.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w500);
+
   static TextStyle mediumWhite13 = TextStyle(
       fontSize: 13.fontSize,
       color: UIColors.white,
@@ -203,26 +157,8 @@ class StyleText {
       fontSize: 20.fontSize,
       color: UIColors.white,
       fontWeight: FontWeight.w500);
-  static TextStyle mediumWhite28 = TextStyle(
-      fontSize: 28.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w500);
-  static TextStyle mediumWhite30 = TextStyle(
-      fontSize: 30.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w500);
 
   //bold-text-black
-
-  static TextStyle boldDarkGrey10 = TextStyle(
-      fontSize: 10.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w700);
-
-  static TextStyle boldDarkGrey12 = TextStyle(
-      fontSize: 12.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w700);
 
   static TextStyle boldDarkGrey13 = TextStyle(
       fontSize: 13.fontSize,
@@ -264,21 +200,9 @@ class StyleText {
       color: UIColors.darkGray,
       fontWeight: FontWeight.w700);
 
-  static TextStyle boldDarkGrey30 = TextStyle(
-      fontSize: 30.fontSize,
-      color: UIColors.darkGray,
-      fontWeight: FontWeight.w700);
 
   //bold-text-white
 
-  static TextStyle boldWhite10 = TextStyle(
-      fontSize: 10.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w700);
-  static TextStyle boldWhite12 = TextStyle(
-      fontSize: 12.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w700);
   static TextStyle boldWhite13 = TextStyle(
       fontSize: 13.fontSize,
       color: UIColors.white,
@@ -305,14 +229,6 @@ class StyleText {
       fontWeight: FontWeight.w700);
   static TextStyle boldWhite20 = TextStyle(
       fontSize: 20.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w700);
-  static TextStyle boldWhite28 = TextStyle(
-      fontSize: 28.fontSize,
-      color: UIColors.white,
-      fontWeight: FontWeight.w700);
-  static TextStyle boldWhite30 = TextStyle(
-      fontSize: 30.fontSize,
       color: UIColors.white,
       fontWeight: FontWeight.w700);
 }

@@ -3,11 +3,12 @@ import 'package:firebasetask/common/widgets/snack_bar.dart';
 import 'package:firebasetask/common/widgets/textfield_widget.dart';
 import 'package:firebasetask/core/utils/app_text_styles.dart';
 import 'package:firebasetask/core/utils/colors.dart';
+import 'package:firebasetask/core/utils/screen_loader.dart';
 import 'package:firebasetask/core/utils/sizes.dart';
 import 'package:firebasetask/core/utils/validators.dart';
 import 'package:firebasetask/di.dart';
 import 'package:firebasetask/domain/entities/user_entity.dart';
-import 'package:firebasetask/presentation/cubit/user/user_cubit.dart';
+import 'package:firebasetask/presentation/cubit/login/login_cubit.dart';
 import 'package:firebasetask/presentation/screens/home/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passwordController = TextEditingController();
   final _scaffoldGlobalKey = GlobalKey<ScaffoldState>();
   final _formKey = GlobalKey<FormState>();
-  UserCubit cubit = sl();
+  LoginCubit cubit = sl();
 
   @override
   void initState() {
@@ -63,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "dsdsd",
+                  "Bobtail",
                   style: StyleText.boldDarkGrey28,
                 ),
                 50.verticalSpace,
@@ -98,8 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
           25.verticalSpace,
           TextFormFieldWidget(
             fillColor: UIColors.white,
-            hintText: "********",
+            hintText: "Password",
             hintStyle: StyleText.hintStyle,
+            obscureText: true,
             labelTextStyle: StyleText.regularDarkGray18,
             textStyle: StyleText.regularDarkGrey14,
             controller: passwordController,
@@ -114,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildLoginButton(BuildContext context) {
-    return BlocListener<UserCubit, UserState>(
+    return BlocListener<LoginCubit, LoginState>(
       bloc: cubit,
       listener: (context, state) {
         if (state is UserSuccess) {
@@ -123,10 +125,10 @@ class _LoginScreenState extends State<LoginScreen> {
           snackBarError(msg: state.error, scaffoldState: _scaffoldGlobalKey);
         }
       },
-      child: BlocBuilder<UserCubit, UserState>(
+      child: BlocBuilder<LoginCubit, LoginState>(
         builder: (context, state) {
           return state is UserLoading
-              ? loadingWidget()
+              ? const AppCircularIndicator()
               : SizedBox(
                   width: 150.flexibleWidth,
                   height: 50.flexibleHeight,

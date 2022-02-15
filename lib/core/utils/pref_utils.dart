@@ -9,20 +9,14 @@ class PreferenceUtils {
     return await prefs.setBool(key, value);
   }
 
-
+//get bool values
   static Future<bool> getBool(String key, {bool? defaultValue}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getBool(key) ?? defaultValue!;
   }
 
-  static Future<bool> remove(String key) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey(key)) {
-      return await prefs.remove(key);
-    }
-    return false;
-  }
 
+//clear all data saved in shared preferences
   static Future<bool> clearAll() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.clear();

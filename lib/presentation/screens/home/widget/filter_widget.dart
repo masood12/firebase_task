@@ -14,12 +14,13 @@ class FilterWidget extends StatelessWidget {
       onTap: onFilterPressed,
       child: Container(
 
-        height: 36.flexibleHeight,
+        height: 32.flexibleHeight,
         decoration: BoxDecoration(
-            color: UIColors.darkGray, borderRadius: BorderRadius.circular(6)),
+          border: Border.all(color: UIColors.primaryColor),
+            color: UIColors.white, borderRadius: BorderRadius.circular(6)),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(filterName!,style: StyleText.mediumWhite14,),
+          child: Text(filterName!,style: StyleText.mediumDarkGray14,),
         ),
       ),
     );
